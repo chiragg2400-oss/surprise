@@ -560,6 +560,19 @@
 
             // Surprise button functionality
             const surpriseButton = document.getElementById('surprise-button');
+            
+            const playButtons = document.querySelectorAll('.playlist-item-play');
+const videoFrame = document.getElementById('video-frame');
+const videoContainer = document.getElementById('video-message');
+
+playButtons.forEach(button => {
+    button.addEventListener('click', function () {
+        const videoURL = this.getAttribute('data-video');
+        
+        videoFrame.src = videoURL + "?autoplay=1";
+        videoContainer.style.display = 'block';
+    });
+});
             const modalOverlay = document.getElementById('modal-overlay');
             const modalClose = document.getElementById('modal-close');
             const clickSound = document.getElementById('click-sound');
